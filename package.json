@@ -1,0 +1,12 @@
+{
+  "name": "proportional-proof-of-work",
+  "version": "0.1.0",
+  "description": "proportional proof of work",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}
