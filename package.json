@@ -1,12 +1,19 @@
 {
   "name": "proportional-proof-of-work",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "proportional proof of work",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": {
+    "name": "Jessica Mulein",
+    "email": "jessica@mulein.com"
+  },
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jessica-mulein/proportional-proof-of-work-js"
+  }
 }
