@@ -1,9 +1,10 @@
 var crypto = require('crypto');
 
 module.exports = {
-	VERSION: 0.1,
+	VERSION: 0.2,
 	HASH_SIZE: 256, // SHA-256
 	MAX_BITS: 255, // maximum number of required hash bits allowed HASH_SIZE - 1
+	DOUBLE_HASH: true, // double sha256
 	/**
 	 * @param Buffer computedHash
 	 * @returns {number}
@@ -40,7 +41,7 @@ module.exports = {
 	 */
 	versionCompatible: function(version)
 	{
-		return ((version !== null) && (version == this.VERSION));
+		return ((version !== null) && (parseFloat(version) >= 0.2));
 	},
 	parseWork: function(work)
 	{
@@ -54,7 +55,7 @@ module.exports = {
 		};
 		// split string out into object
 		var parts = work.trim().split(':', 6);
-		workObject.version = parseFloat(parts[0]);
+		workObject.version = parts[0].toString.trim();
 		workObject.bits = parts[1] ? parseInt(parts[1]) : null;
 		workObject.date = parts[2] ? parseInt(parts[2]) : null;
 		workObject.resource = parts[3] ? parts[3].toString().trim() : null;
@@ -93,6 +94,9 @@ module.exports = {
 	{
 		var workObject = this.parseWork(work);
 		var hash = crypto.createHash('sha256').update(work).digest();
+		if (this.DOUBLE_HASH) {
+			hash = crypto.createHash('sha256').update(hash).digest();
+		}
 		return this.verifyBits(hash, workObject.bits);
 	},
 	/**

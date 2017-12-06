@@ -9,6 +9,6 @@ The author is presently investigating two approaches- one which works as part of
 
 This is in the early alpha stages, though the core proof of work functionality seems correct and compatible between PHP and JavaScript.
 
-Laravel: https://github.com/jessica-mulein/proportional-proof-of-work-laravel / https://packagist.org/packages/jessica-mulein/proportional-proof-of-work-laravel
+Laravel (WIP): https://github.com/jessica-mulein/proportional-proof-of-work-laravel / https://packagist.org/packages/jessica-mulein/proportional-proof-of-work-laravel
 
 Laravel Integration Demo (WIP): https://github.com/jessica-mulein/proportional-proof-of-work-laravel-demo
